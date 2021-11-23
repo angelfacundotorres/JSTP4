@@ -8,25 +8,30 @@ Utiliza este objeto para mostrar la descripción, ingresar y extraer dinero y vo
 
 
 let cuenta = {
-  titular : 'Alex',
+  titular:'Alex',
   saldo: 0,
-
-  ingresar:(montoIngresar)=>{
-    cuenta.saldo = cuenta.saldo + montoIngresar;
-  },
-  extraer:(montoExtraer)=>{
-    cuenta.saldo = cuenta.saldo - montoExtraer;
-  },
-  informar:()=>{
-    document.write('<br>Estado de cuenta: '+ cuenta.saldo +'<br>');
-  },
-  descripcion:()=>{
-    document.write('<br> Titular: '+ cuenta.titular + '<br>Saldo: '+ cuenta.saldo);
-  }
+ingresar: (cantidad)=>{
+  cuenta.saldo = cuenta.saldo + cantidad
+},
+extraer: (retirar)=>{
+  cuenta.saldo = cuenta.saldo - retirar
+},
+informar: ()=>{
+  document.write(`<br> Estado de cuenta: ${cuenta.saldo}`)
+},
+descripcion: ()=>{
+  document.write(`<br>Titular de la cuenta: ${cuenta.titular} <br>Saldo: ${cuenta.saldo}`)
+},
 }
+
 cuenta.descripcion();
-let montoIngresar = parseInt(prompt('Ingrese el monto que quieres depositar'));
-let montoExtraer = parseInt(prompt('Ingrese el numero que quieres extraer'));
-cuenta.ingresar(montoIngresar);
-cuenta.extraer(montoIngresar);
+let cantidad = parseInt(prompt('Ingresa el monto que quieres depositar'));
+let retirar = parseInt(prompt('Ingresa el monto que quieras extraer'));
+cuenta.ingresar();
+cuenta.extraer();
 cuenta.informar();
+cuenta.descripcion;
+
+
+
+// me tira un NAN
